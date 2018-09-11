@@ -17,6 +17,7 @@ clip = 0
 pi = 3.141592 / 180.0
 
 while (True):
+        
         if since == 1:
                 if dir == 0:
                     clear_canvas_now()
