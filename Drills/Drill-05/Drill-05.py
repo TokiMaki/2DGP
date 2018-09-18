@@ -7,7 +7,6 @@ character = load_image('animation_sheet.png')
 
 pointx = [203, 132, 535, 477, 715, 316, 510, 692, 682, 712]
 pointy = [535, 234, 470, 203, 136, 225, 92, 518, 336, 349]
-frame = 0
 num = 0
 
 def next_direction(num1, num2):
@@ -18,14 +17,20 @@ def next_direction(num1, num2):
 def go_next_point(num1, num2):
     x = pointx[num1]
     y = pointy[num1]
+    i = 0
+    frame = 0
     movex, movey = next_direction(num1, num2)
-    while x != pointx[num2] and y != pointy[num2]:
+    movex = movex // 10.0
+    movey = movey // 10.0
+    while i < 10:
         clear_canvas()
         grass.draw(400, 30)
-        character.clip_draw(100, 100, 100, 100, x, y)
+        character.clip_draw(100 * frame, 100, 100, 100, x, y)
+        frame = (frame + 1) % 8
         update_canvas()
         x += movex
         y += movey
+        i += 1
         delay(0.05)
 
 while True:
