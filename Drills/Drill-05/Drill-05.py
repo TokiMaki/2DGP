@@ -11,6 +11,7 @@ def move_from_center_to_right():
         grass.draw_now(400,30)
         character.clip_draw(0, 300, 100, 100, x, 90)
         update_canvas()
+        x += 2
         delay(0.02)
 
 def move_up():
