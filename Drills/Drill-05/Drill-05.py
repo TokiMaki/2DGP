@@ -4,27 +4,15 @@ open_canvas()
 grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 
-
-running = True
-x = 0
-frame = 0
-
-
-def handle_events():
-    # fill here
+def make_rectangle():
     pass
 
+def make_circle():
+    pass
 
-while x < 800 and running:
-    clear_canvas()
-    grass.draw(400, 30)
-    character.clip_draw(frame * 100, 100, 100, 100, x, 90)
-    update_canvas()
-
-    handle_events()
-    frame = (frame + 1) % 8
-    x += 5
-    delay(0.05)
+while True:
+    make_rectangle()
+    make_circle()
 
 close_canvas()
 
