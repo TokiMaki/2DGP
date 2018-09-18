@@ -14,6 +14,12 @@ def next_direction(num1, num2):
     y = pointy[num2] - pointy[num1]
     return x, y
 
+def picture_direction(x, y, movex, frame):
+        if (movex > 0):
+            character.clip_draw(100 * frame, 100, 100, 100, x, y)
+        if (movex < 0):
+            character.clip_draw(100 * frame, 0, 100, 100, x, y)
+
 def go_next_point(num1, num2):
     x = pointx[num1]
     y = pointy[num1]
@@ -25,7 +31,7 @@ def go_next_point(num1, num2):
     while i < 10:
         clear_canvas()
         grass.draw(400, 30)
-        character.clip_draw(100 * frame, 100, 100, 100, x, y)
+        picture_direction(x, y, movex, frame)
         frame = (frame + 1) % 8
         update_canvas()
         x += movex
