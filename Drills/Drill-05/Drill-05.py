@@ -85,7 +85,7 @@ def make_circle():
         get_events()
 
 while True:
-    # make_rectangle()
+    make_rectangle()
     make_circle()
 
 close_canvas()
