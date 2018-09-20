@@ -18,7 +18,7 @@ def handle_events():
         elif event.type == SDL_MOUSEBUTTONDOWN:
             handx, handy = event.x, KPU_HEIGHT - 1 - event.y
             movex, movey = go_point(x, y, event.x, KPU_HEIGHT - 1 - event.y)
-            motion = draw_motion(movex)
+            motion = running_motion(movex)
             timer = 0
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
@@ -28,11 +28,17 @@ def go_point(characterx, charactery, pointx, pointy):
     movey = (pointy - charactery) // 10.0
     return movex, movey
 
-def draw_motion(movex):
+def running_motion(movex):
     if movex > 0:
         return 1
-    if movex < 0:
+    if movex <= 0:
         return 0
+
+def stop_motion(movex):
+    if movex > 0:
+        return 3
+    if movex <= 0:
+        return 2
 
 
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
@@ -46,7 +52,7 @@ movex = 0
 movey = 0
 timer = 0
 frame = 0
-motion = 0
+motion = 2
 handx, handy = 0, 0
 
 while running:
@@ -58,8 +64,11 @@ while running:
         x += movex
         y += movey
         timer += 1
+    elif (timer == 10):
+        motion = stop_motion(movex)
     frame = (frame + 1) % 8
     update_canvas()
+
 
     handle_events()
     delay(0.05)
