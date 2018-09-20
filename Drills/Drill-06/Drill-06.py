@@ -3,6 +3,7 @@ from pico2d import *
 KPU_WIDTH, KPU_HEIGHT = 1280, 1024
 
 def handle_events():
+
     global running
     global x, y
     global movex, movey
@@ -43,7 +44,6 @@ while running:
     clear_canvas()
     kpu_ground.draw(KPU_WIDTH // 2, KPU_HEIGHT // 2)
     character.clip_draw(frame * 100, 100 * motion, 100, 100, x, y)
-    hand_arrow.draw(handx, handy)
     if (timer < 10):
         x += movex
         y += movey
