@@ -40,7 +40,6 @@ def stop_motion(movex):
     if movex <= 0:
         return 2
 
-
 open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu_ground = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
