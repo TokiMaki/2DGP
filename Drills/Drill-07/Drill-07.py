@@ -24,7 +24,6 @@ def draw_line(p1, p2):
         delay(0.05)
         update_canvas()
 
-
 size = 20
 points = [(random.randint(0, 1280), random.randint(0, 1024)) for i in range(size)]
 n = 1
