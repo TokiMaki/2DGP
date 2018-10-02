@@ -20,12 +20,15 @@ def draw_line(p1, p2):
         if (p1[0] > p2[0]):
             motion = 0
         character.clip_draw(frame * 100, 100 * motion, 100, 100, x, y)
-        delay(0.1)
+        frame = (frame + 1) % 8
+        delay(0.05)
         update_canvas()
+
 
 size = 20
 points = [(random.randint(0, 1280), random.randint(0, 1024)) for i in range(size)]
 n = 1
+
 
 while True:
     draw_line(points[n - 1], points[n])
