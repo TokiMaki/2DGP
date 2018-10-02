@@ -7,9 +7,6 @@ open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu_ground = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
 
-global frame
-global motion
-
 def draw_line(p1, p2):
     frame = 0
     motion = 2
