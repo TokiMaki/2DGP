@@ -20,6 +20,7 @@ def draw_line(p1, p2):
         if (p1[0] > p2[0]):
             motion = 0
         character.clip_draw(frame * 100, 100 * motion, 100, 100, x, y)
+        delay(0.1)
         update_canvas()
 
 size = 20
