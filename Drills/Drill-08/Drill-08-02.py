@@ -29,7 +29,6 @@ def draw_curve_4_points(p1, p2, p3, p4):
         update_canvas()
 
 size = 10
-
 points = [(random.randint(0, 1280), random.randint(0, 1024)) for i in range(size)]
 
 n = 0
