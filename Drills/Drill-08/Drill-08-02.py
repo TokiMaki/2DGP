@@ -7,6 +7,7 @@ open_canvas(KPU_WIDTH, KPU_HEIGHT)
 kpu_ground = load_image('KPU_GROUND.png')
 character = load_image('animation_sheet.png')
 
+
 def draw_curve_4_points(p1, p2, p3, p4):
     frame = 0
     motion = 2
@@ -27,6 +28,7 @@ def draw_curve_4_points(p1, p2, p3, p4):
         frame = (frame + 1) % 8
         delay(0.05)
         update_canvas()
+
 
 size = 10
 points = [(random.randint(0, 1280), random.randint(0, 1024)) for i in range(size)]
