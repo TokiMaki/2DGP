@@ -109,5 +109,6 @@ points = [(-300, 200), (400, 350), (300, -300), (-200, -200)]
 prepare_turtle_canvas()
 
 while True:
+    draw_curve_4_points((points[0][0], points[0][1]), (points[1][0], points[1][1]), (points[2][0], points[2][1]), (points[3][0], points[3][1]))
 
 turtle.done()
