@@ -41,6 +41,10 @@ class Ball:
             self.y = 60
             self.speed = 0
 
+    def draw(self):
+        if (self.ballsize == 0):
+            self.bigimage.clip_draw(0, 0, 41, 41, self.x, self.y)
+
 def handle_events():
     global running
     events = get_events()
