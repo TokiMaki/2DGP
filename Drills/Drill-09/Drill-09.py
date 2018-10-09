@@ -34,6 +34,12 @@ class Ball:
             self.y -= self.speed
         if (self.y - self.speed > 60 and self.ballsize == 1):
             self.y -= self.speed
+        if (self.y - self.speed < 70 and self.ballsize == 0):
+            self.y = 70
+            self.speed = 0
+        if (self.y - self.speed < 60 and self.ballsize == 1):
+            self.y = 60
+            self.speed = 0
 
 def handle_events():
     global running
