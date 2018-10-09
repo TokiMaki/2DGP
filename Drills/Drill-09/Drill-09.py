@@ -44,6 +44,8 @@ class Ball:
     def draw(self):
         if (self.ballsize == 0):
             self.bigimage.clip_draw(0, 0, 41, 41, self.x, self.y)
+        if (self.ballsize == 1):
+            self.smallimage.clip_draw(0, 0, 21, 21, self.x, self.y)
 
 def handle_events():
     global running
