@@ -56,6 +56,7 @@ def handle_events():
         elif event.type == SDL_KEYDOWN and event.key == SDLK_ESCAPE:
             running = False
 
+
 # initialization code
 open_canvas()
 
