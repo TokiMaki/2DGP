@@ -15,11 +15,11 @@ class Pause:
     def __init__(self):
         self.image = load_image('pause.png')
         self.frame = 0
+
     def update(self):
-        self.frame = (self.frame + 1) % 10
+        pass
 
     def draw(self):
-        if (self.frame >= 5):
             self.image.clip_draw(0, 0, 900, 900, 400, 300, 300, 300)
 
 
@@ -60,6 +60,4 @@ def update():
 def draw():
     clear_canvas()
     pause.draw()
-    main_state.grass.draw()
-    main_state.boy.draw()
     update_canvas()
