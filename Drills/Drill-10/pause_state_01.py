@@ -61,3 +61,4 @@ def draw():
     clear_canvas()
     pause.draw()
     update_canvas()
+    
