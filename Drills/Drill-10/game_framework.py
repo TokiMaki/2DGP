@@ -1,3 +1,6 @@
+import time
+from pico2d import *
+
 class GameState:
     def __init__(self, state):
         self.enter = state.enter
@@ -76,18 +79,25 @@ def pop_state():
         stack[-1].resume()
 
 
-
 def quit():
     global running
     running = False
 
+def get_frame_time():
+    global current_time
+    frame_time = get_time() - current_time
+    current_time += frame_time
+    return frame_time
 
 def run(start_state):
     global running, stack
     running = True
     stack = [start_state]
     start_state.enter()
+    current_time = time.clock()
     while (running):
+        frame_time = time.clock() - current_time
+        current_time += frame_time
         stack[-1].handle_events()
         stack[-1].update()
         stack[-1].draw()
