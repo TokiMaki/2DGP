@@ -168,6 +168,7 @@ next_state_table = {
                 SHIFTUP: RunState}
 }
 
+
 class Boy:
 
     def __init__(self):
