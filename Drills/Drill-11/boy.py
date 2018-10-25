@@ -124,6 +124,8 @@ class DashState:
             boy.velocity -= 1
         elif event == LEFT_UP:
             boy.velocity += 1
+        boy.dir = boy.velocity
+        boy.timer = 100
 
     @staticmethod
     def exit(boy, event):
