@@ -21,3 +21,7 @@ class Ghost:
         self.y_sin = self.y
         self.font = load_font('ENCR10B.TTF', 16)
         boy.real_time = 0
+
+    def draw(self):
+        self.image.opacify(random.randint(1, 10) / 10.0)
+        self.image.clip_composite_draw(int(self.frame) * 100, 300, 100, 100, 3.141592 / 2, '', self.x_cos, self.y_sin, 100, 100)
