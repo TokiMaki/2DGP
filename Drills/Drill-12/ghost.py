@@ -48,3 +48,4 @@ class Ghost:
         if (main_state.boy.cur_state != boy.SleepState):
             game_world.remove_object(self)
 
+
