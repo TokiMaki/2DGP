@@ -49,6 +49,7 @@ class WalkingState:
             boy.x_velocity += RUN_SPEED_PPS
 
         if event == UPKEY_DOWN:
+            boy.y_velocity += RUN_SPEED_PPS
         elif event == UPKEY_UP:
             boy.y_velocity -= RUN_SPEED_PPS
         if event == DOWNKEY_DOWN:
@@ -77,6 +78,7 @@ class WalkingState:
     @staticmethod
     def draw(boy):
         # fill here
+        cx, cy = boy.x - boy.bg.window_left, boy.y - boy.bg.window_bottom
         #cx, cy = boy.canvas_width // 2, boy.canvas_height // 2
         if boy.x_velocity > 0:
             boy.image.clip_draw(int(boy.frame) * 100, 100, 100, 100, cx, cy)
