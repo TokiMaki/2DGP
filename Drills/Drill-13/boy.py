@@ -75,6 +75,7 @@ class WalkingState:
         boy.y = clamp(75, boy.y, boy.bg.h - 20)
 
 
+
     @staticmethod
     def draw(boy):
         # fill here
