@@ -15,6 +15,8 @@ class Ball:
         self.fall_speed = 0
 
     def get_bb(self):
+        cx = self.x - self.bg.window_left
+        cy = self.y - self.bg.window_bottom
         return cx - 10, cy - 10, cx + 10, cy + 10
 
     def set_background(self, bg):
