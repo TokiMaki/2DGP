@@ -20,6 +20,7 @@ class Ball:
         self.bg = bg
 
     def draw(self):
+        self.image.draw(cx, cy)
         draw_rectangle(*self.get_bb())
 
     def update(self):
