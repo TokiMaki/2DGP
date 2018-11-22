@@ -23,6 +23,7 @@ class Ball:
         self.bg = bg
 
     def draw(self):
+        cx = self.x - self.bg.window_left
         self.image.draw(cx, cy)
         draw_rectangle(*self.get_bb())
 
